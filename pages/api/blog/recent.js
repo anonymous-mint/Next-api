@@ -1,5 +1,5 @@
-const handler  = (req, res) => {
+const recentBlogHandler  = (req, res) => {
   res.status(200).json({ message: "success recent blog" });
 };
 
-export default handler;
+export default recentBlogHandler;

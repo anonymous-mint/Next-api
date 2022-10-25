@@ -1,5 +1,5 @@
-const handler  = (req, res) => {
+const dashboardHandler  = (req, res) => {
   res.status(200).json({ message: "success dashboard" });
 };
 
-export default handler;
+export default dashboardHandler;

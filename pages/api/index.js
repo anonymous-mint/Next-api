@@ -1,5 +1,5 @@
-const handler  = (req, res) => {
+const homeHandler  = (req, res) => {
   res.status(200).json({ message: "success" });
 };
 
-export default handler;
+export default homeHandler;
