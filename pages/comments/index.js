@@ -17,8 +17,18 @@ const CommentsList = () => {
       body: JSON.stringify({ comment }),
       headers: { "Content-Type": "application/json" },
     });
-		const data = await response.json();
-		console.log(data);
+    const data = await response.json();
+		fetchComments()
+    console.log(data);
+  };
+
+  const deleteComment = async (id) => {
+    const response = await fetch(`/api/comments/${id}`, {
+      method: "DELETE",
+    });
+    const data = await response.json();
+		fetchComments()
+    console.log(data);
   };
 
   return (
@@ -36,7 +46,14 @@ const CommentsList = () => {
         Load comments
       </button>
       {commentsList?.map((comment) => (
-        <p key={comment.id}>{comment.text}</p>
+        <>
+          <p key={comment.id}>
+            {comment.text}
+            <button type="button" onClick={() => deleteComment(comment.id)}>
+              X
+            </button>
+          </p>
+        </>
       ))}
     </div>
   );
